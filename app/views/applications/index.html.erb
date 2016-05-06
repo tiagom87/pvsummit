@@ -1,0 +1,27 @@
+<h3>Applications (<%= @applications.size %>)</h3>
+<hr>
+<table class="table">
+	<thead>
+		<th>ID</th>
+		<th>Company Name</th>
+		<th>Email</th>
+		<th>Applied</th>
+		<th>State</th>
+		<th>Actions</th>
+	</thead>
+	<tbody>
+		<% @applications.each do |application| %>
+		<tr>
+			<td><%= application.id %></td>
+			<td><%= link_to application.company_name, application_path(application) %></td>
+			<td><%= application.email %></td>
+			<td><%= application.applied_at %></td>
+			<td><%= application.aasm_state %></td>
+			<td><% if application.aasm_state == "applied" %>
+				<%= link_to "Reject", reject_application_path(application), method: :put, class: "btn btn-danger btn-xs", data: { confirm: "Are you sure?" } %> <%= link_to "Accept", accept_application_path(application), method: :put, class: "btn btn-primary btn-xs" %>
+				<% end %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

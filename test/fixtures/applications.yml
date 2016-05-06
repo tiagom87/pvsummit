@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_name: MyString
+  company_description: MyText
+  website_url: MyString
+  nif: 1
+  founding_team: MyText
+  team_description: MyText
+  email: MyString
+  founding_date: 2016-05-03 08:11:51
+  funding_to_date: MyString
+  activity: MyText
+  product_description: MyText
+  customers: MyText
+  business_model: MyText
+  future: MyText
+  pitch_url: MyString
+  user_id: 1
+  state: MyString
+
+two:
+  company_name: MyString
+  company_description: MyText
+  website_url: MyString
+  nif: 1
+  founding_team: MyText
+  team_description: MyText
+  email: MyString
+  founding_date: 2016-05-03 08:11:51
+  funding_to_date: MyString
+  activity: MyText
+  product_description: MyText
+  customers: MyText
+  business_model: MyText
+  future: MyText
+  pitch_url: MyString
+  user_id: 1
+  state: MyString

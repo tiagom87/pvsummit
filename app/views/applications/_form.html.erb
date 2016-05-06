@@ -1,0 +1,61 @@
+<%= simple_form_for(@application) do |f| %>
+    <%= f.error_notification %>
+
+<div class="form-inputs">
+  <div class="row">
+
+    <div class="col-md-6">
+  <%= f.input :company_name %>
+  <%= f.input :company_description %>
+  <%= f.input :website_url %>
+  <%= f.input :nif %>
+  <%= f.input :founding_team %>
+  <%= f.input :team_description %>
+  <%= f.input :email %>
+  <%= f.input :founding_date %>
+</div>
+<div class="col-md-6">
+  
+  <%= f.input :funding_to_date, collection: [ "€0-€500k", "€500k-€1M", "€1M-€2M", ">€2M"] %>
+  <%= f.input :activity %>
+  <%= f.input :product_description %>
+  <%= f.input :customers %>
+  <%= f.input :business_model %>
+  <%= f.input :future %>
+  <%= f.hidden_field :pitch_url %>
+  <%= f.hidden_field :pitch_name %>
+  <%= f.hidden_field :temp_state, input_html: {value: "nothing"} %>
+  <%= f.label :pitch_url, "Pitch Attachment" %>
+  <p id="filepick_tag"><%= @application.pitch_url %></p>
+  <input type="filepicker" data-fp-apikey="ANScnvEM4RcizS6BvJHDjz"
+  onchange="updateInput(event)">
+    <%= f.error :pitch_url %>
+  </div>
+</div>
+</div>
+<br>
+<div class="form-actions">
+  <%= f.button :submit, "Save", class: "btn btn-info", id: "submit_button" %>
+  <input class="btn btn-info" type="button" value="Save" onclick="mySave()">
+  <input class="btn btn-warning" type="button" value="Submit Application" onclick="myApply()">
+</div>
+<br>
+<% end %>
+
+<script type="text/javascript">
+function updateInput(ish){
+  document.getElementById("application_pitch_url").value = ish.fpfile.url;
+  document.getElementById("application_pitch_name").value = ish.fpfile.filename;
+  $("#filepick_tag").text(ish.fpfile.filename);
+}</script>
+
+<script type="text/javascript">
+function mySave() {
+$("#application_temp_state").val("Nothing");
+$("#submit_button").click();
+};
+function myApply() {
+$("#application_temp_state").val("Apply");
+$("#submit_button").click();
+};
+</script>
