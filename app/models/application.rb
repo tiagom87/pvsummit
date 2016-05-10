@@ -24,7 +24,7 @@ class Application < ActiveRecord::Base
 
 	validates :company_name, :presence => true, :on => :update, :if => :applied?
 	validates :company_description, :presence => true, :on => :update, :if => :applied?
-	validates :website_url, :presence => true, :url => true, :on => :update, :if => :applied?
+	validates :website_url, :presence => true, :on => :update, :if => :applied?
 	validates :nif, :presence => true, numericality: { only_integer: true }, length: { maximum: 9, minimum: 9 }, :on => :update, :if => :applied?
 	validates :founding_team, :presence => true, :on => :update, :if => :applied?
 	validates :team_description, :presence => true, :on => :update, :if => :applied?
