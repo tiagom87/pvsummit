@@ -5,23 +5,23 @@
   <div class="row">
 
     <div class="col-md-6">
-  <%= f.input :company_name %>
-  <%= f.input :company_description %>
+  <%= f.input :company_name, placeholder: "20 Characters Max" %>
+  <%= f.input :company_description, placeholder: "2000 Characters Max" %>
   <%= f.input :website_url %>
   <%= f.input :nif %>
-  <%= f.input :founding_team %>
-  <%= f.input :team_description %>
+  <%= f.input :founding_team, placeholder: "200 Characters Max" %>
+  <%= f.input :team_description, placeholder: "2500 Characters Max" %>
   <%= f.input :email %>
-  <%= f.input :founding_date %>
+  
 </div>
 <div class="col-md-6">
-  
+  <%= f.input :founding_date %>
   <%= f.input :funding_to_date, collection: [ "€0-€500k", "€500k-€1M", "€1M-€2M", ">€2M"] %>
-  <%= f.input :activity %>
-  <%= f.input :product_description %>
-  <%= f.input :customers %>
-  <%= f.input :business_model %>
-  <%= f.input :future %>
+  <%= f.input :product_description, placeholder: "1500 Characters Max" %>
+  <%= f.input :customers, placeholder: "1000 Characters Max" %>
+  <%= f.input :business_model, placeholder: "1500 Characters Max" %>
+  <%= f.label :future, 'Future Plans/Roadmap' %>
+  <%= f.input :future, label: false, placeholder: "1500 Characters Max" %>
   <%= f.hidden_field :pitch_url %>
   <%= f.hidden_field :pitch_name %>
   <%= f.hidden_field :temp_state, input_html: {value: "nothing"} %>

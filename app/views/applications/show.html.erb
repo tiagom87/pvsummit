@@ -10,39 +10,38 @@
 	<%= render "rejected" %>
 	<% end %>
 <% else %>
-	<h3>Company Name: <%= @application.company_name %><br> <small>State: <%= @application.aasm_state %></small></h3>
+	<h3>Company Name: <b><%= @application.company_name %></b><br> <small>State: <%= @application.aasm_state %></small></h3>
 	<hr>
 	<div class="row">
     <div class="col-md-6">
-	<h5>Company Description</h5>
+	<h5><b>Company Description</b></h5>
 	<p><%= @application.company_description %></p>
-	<h5>Website URL</h5>
+	<h5><b>Website URL</b></h5>
 	<p><%= @application.website_url %></p>
-	<h5>NIF</h5>
+	<h5><b>NIF</b></h5>
 	<p><%= @application.nif %></p>
-	<h5>Founding Team</h5>
+	<h5><b>Founding Team</b></h5>
 	<p><%= @application.founding_team %></p>
-	<h5>Team Description</h5>
+	<h5><b>Team Description</b></h5>
 	<p><%= @application.team_description %></p>
-	<h5>Email</h5>
+	<h5><b>Email</b></h5>
 	<p><%= @application.email %></p>
-	<h5>Founding Date</h5>
+	<h5><b>Founding Date</b></h5>
 	<p><%= @application.founding_date %></p>
-	<h5>Funding Date</h5>
-	<p><%= @application.funding_to_date %></p>
+	
 	</div>
 	<div class="col-md-6">
-	<h5>Activity</h5>
-	<p><%= @application.activity %></p>
-	<h5>Product Description</h5>
+	<h5><b>Funding Date</b></h5>
+	<p><%= @application.funding_to_date %></p>
+	<h5><b>Product Description</b></h5>
 	<p><%= @application.product_description %></p>
-	<h5>Customers</h5>
+	<h5><b>Customers</b></h5>
 	<p><%= @application.customers %></p>
-	<h5>Business Model</h5>
+	<h5><b>Business Model</b></h5>
 	<p><%= @application.business_model %></p>
-	<h5>Future</h5>
+	<h5><b>Future</b></h5>
 	<p><%= @application.future %></p>
-	<h5>Pitch URL</h5>
+	<h5><b>Pitch URL</b></h5>
 	<%= link_to @application.pitch_name, @application.pitch_url, :target => "_blank" %>
 	
 </div>
