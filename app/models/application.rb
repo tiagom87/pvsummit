@@ -33,7 +33,6 @@ class Application < ActiveRecord::Base
 	validates :funding_to_date, :presence => true, :on => :update, :if => :applied?
 	validates :product_description, :presence => true, :on => :update, :if => :applied?, length: { maximum: 1500}
 	validates :customers, :presence => true, :on => :update, :if => :applied?, length: { maximum: 1000}
-	validates :business_model, :presence => true, :on => :update, :if => :applied?, length: { maximum: 1500}
 	validates :future, :presence => true, :on => :update, :if => :applied?, length: { maximum: 1500}
 	validates :pitch_url, :presence => true, :on => :update, :if => :applied?
 

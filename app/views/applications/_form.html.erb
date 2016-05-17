@@ -11,15 +11,15 @@
   <%= f.input :nif %>
   <%= f.input :founding_team, placeholder: "200 Characters Max" %>
   <%= f.input :team_description, placeholder: "2500 Characters Max" %>
-  <%= f.input :email %>
+ 
   
 </div>
 <div class="col-md-6">
+   <%= f.input :email %>
   <%= f.input :founding_date %>
-  <%= f.input :funding_to_date, collection: [ "€0-€500k", "€500k-€1M", "€1M-€2M", ">€2M"] %>
+  <%= f.input :funding_to_date, collection: [ "€0-€500k", "€500k-€1M", "€1M-€2M", "€2M-€3M", ">€3M"] %>
   <%= f.input :product_description, placeholder: "1500 Characters Max" %>
   <%= f.input :customers, placeholder: "1000 Characters Max" %>
-  <%= f.input :business_model, placeholder: "1500 Characters Max" %>
   <%= f.label :future, 'Future Plans/Roadmap' %>
   <%= f.input :future, label: false, placeholder: "1500 Characters Max" %>
   <%= f.hidden_field :pitch_url %>
