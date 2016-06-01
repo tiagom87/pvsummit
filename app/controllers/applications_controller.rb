@@ -35,6 +35,8 @@ class ApplicationsController < ApplicationController
             @application.apply!
             @application.update_attributes(applied_at: Time.now)
             format.html { redirect_to @application, success: 'Application was successfully Applied.' }
+            UserMailer.application_applied(@user)
+            UserMailer.pv_application_accepted(@user)
           else
             format.html { redirect_to edit_application_path(@application), notice: 'Application was Saved.' }
           end
@@ -47,11 +49,13 @@ class ApplicationsController < ApplicationController
   def accept
     @application.accept!
     redirect_to applications_path, success: "Application was successfully accepted"
+    UserMailer.application_accepted(@user)
   end
 
   def reject
     @application.reject!
     redirect_to applications_path, success: "Application was successfully rejected"
+    UserMailer.application_rejected(@user)
   end
 
   private

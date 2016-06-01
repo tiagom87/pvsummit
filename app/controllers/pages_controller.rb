@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   		end
   	else
   		@landing = "hello"
+      redirect_to new_user_registration_path
   	end
   end
 end
