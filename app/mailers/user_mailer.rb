@@ -1,19 +1,16 @@
 class UserMailer < ApplicationMailer
 	default from: "communication@portugalventures.pt"
 
-  def application_applied(user)
-    @user = user
-    mail(to: @user.email, subject: 'Application sent')
+  def application_applied(application)
+    mail(to: application.email, subject: 'Application sent')
   end
 
-  def application_accepted(user)
-    @user = user
-    mail(to: @user.email, subject: 'Application accepted')
+  def application_accepted(application)
+    mail(to: application.email, subject: 'Application accepted')
   end
 
-  def application_rejected(user)
-    @user = user
-    mail(to: @user.email, subject: 'Application rejected')
+  def application_rejected(application)
+    mail(to: application.email, subject: 'Application rejected')
   end
 
   def pv_application_accepted

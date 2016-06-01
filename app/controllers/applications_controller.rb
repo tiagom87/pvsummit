@@ -33,8 +33,8 @@ class ApplicationsController < ApplicationController
       if @application.update(application_params)
           if @application.temp_state == "Apply"
             @application.apply!
-            UserMailer.application_applied(@user).deliver_later
-            UserMailer.pv_application_accepted(@user).deliver_later
+            UserMailer.application_applied(@application).deliver_later
+            UserMailer.pv_application_accepted.deliver_later
             @application.update_attributes(applied_at: Time.now)
             format.html { redirect_to @application, success: 'Application was successfully Applied.' }
           else
@@ -48,13 +48,13 @@ class ApplicationsController < ApplicationController
 
   def accept
     @application.accept!
-    UserMailer.application_accepted(@user).deliver_later
+    UserMailer.application_accepted(@application).deliver_later
     redirect_to applications_path, success: "Application was successfully accepted"
   end
 
   def reject
     @application.reject!
-    UserMailer.application_rejected(@user).deliver_later
+    UserMailer.application_rejected(@application).deliver_later
     redirect_to applications_path, success: "Application was successfully rejected"
   end
 
