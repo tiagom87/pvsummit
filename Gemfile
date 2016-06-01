@@ -65,4 +65,7 @@ gem "validate_url"
 
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'delayed_job_active_record'
+
+gem "delayed_job_web"
 
