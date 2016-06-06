@@ -66,6 +66,6 @@ class ApplicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def application_params
-      params.require(:application).permit(:company_name, :company_description, :website_url, :nif, :founding_team, :team_description, :email, :founding_date, :funding_to_date, :product_description, :customers, :future, :pitch_url, :pitch_name, :temp_state)
+      params.require(:application).permit(:company_name, :company_description, :website_url, :nif, :founding_team, :team_description, :email, :founding_date, :funding_to_date, :product_description, :customers, :future, :pitch_url, :pitch_name, :temp_state, :business_model)
     end
 end
