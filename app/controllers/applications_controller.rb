@@ -17,18 +17,12 @@ class ApplicationsController < ApplicationController
     if @application.aasm_state == "started"
       redirect_to edit_application_path(@application)
     end
-    if @application.user != current_user
-      redirect_to root_path, error: "Forbidden"
-    end
   end
 
   # GET /applications/1/edit
   def edit
     unless @application.aasm_state == "started"
       redirect_to application_path(@application), error: "You have already submitted this application"
-    end
-    if @application.user != current_user
-      redirect_to root_path, error: "Forbidden"
     end
   end
 
